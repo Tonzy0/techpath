@@ -1,0 +1,162 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #E9ECFC;
+  }
+  
+  .dashboard-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .navbar {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    color: #333;
+    padding: 10px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .toggle-button {
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .navbar-brand {
+    flex-grow: 1;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+  }
+  
+  .search-box input {
+    padding: 5px;
+    font-size: 16px;
+  }
+  
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    background-color: #fff;
+    color: #333;
+    transition: transform 0.3s;
+    transform: translateX(-100%);
+    padding-top: 60px; /* Adjusting for navbar height */
+    z-index: 999; /* Ensure it's below the navbar */
+  }
+  
+  .sidebar.open {
+    transform: translateX(0);
+  }
+  
+  .sidebar-logo {
+    padding: 15px;
+    color: #333;
+    background-color: #fff;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  
+  .sidebar-menu {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar-menu li {
+    padding: 15px 10px;
+    cursor: pointer;
+  }
+  
+  .main-content {
+    margin-top: 60px;
+    margin-left: 0;
+    padding: 20px;
+    transition: margin-left 0.3s;
+    flex-grow: 1;
+  }
+  
+  .main-content.sidebar-open {
+    margin-left: 250px;
+  }
+  
+  .dashboard {
+    background: #E9ECFC;
+    padding: 20px;
+    min-height: calc(100vh - 60px);
+  }
+  
+  .dashboard h1 {
+    margin: 20px;
+  }
+  
+  .dashboard h2 {
+    margin: 20px;
+    color: #666;
+  }
+  
+  .content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    background: white;
+    padding: 20px;
+    width: 40%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    text-align: justify;
+  }
+  
+  .card h3 {
+    margin: 10px;
+  }
+
+  .card p {
+    margin: 10px;
+  }
+  
+  .card button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 768px) {
+    .content {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .card {
+      width: 80%;
+      margin-bottom: 20px;
+    }
+  }
+  
